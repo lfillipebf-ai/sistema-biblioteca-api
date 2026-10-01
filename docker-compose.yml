@@ -10,6 +10,16 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
+  backend:
+    build: ./backend
+    container_name: biblioteca-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/biblioteca
+      SPRING_DATASOURCE_USERNAME: biblioteca
+      SPRING_DATASOURCE_PASSWORD: biblioteca
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
 volumes:
   postgres_data:
