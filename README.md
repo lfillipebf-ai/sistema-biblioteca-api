@@ -1,15 +1,18 @@
 # Sistema Biblioteca API
 
-API REST para gerenciamento de biblioteca, desenvolvida como projeto de portfólio/estudo.
+API REST para gerenciamento de biblioteca.
 
 ## Tecnologias
-- Java 17
-- Spring Boot
-- Spring Data JPA
-- PostgreSQL
-- Maven
-- Docker / Docker Compose
-- REST API
+Java 17, Spring Boot, Spring Data JPA, PostgreSQL, Maven, Docker e REST API.
+
+## Como executar
+Pré-requisito: Docker Desktop.
+
+    git clone https://github.com/lfillipebf-ai/sistema-biblioteca-api.git
+    cd sistema-biblioteca-api
+    docker compose up --build
+
+API: http://localhost:8080
 
 ## Funcionalidades
 - Cadastro de livros e autores
@@ -17,7 +20,14 @@ API REST para gerenciamento de biblioteca, desenvolvida como projeto de portfól
 - Empréstimos e devoluções
 - Controle de disponibilidade
 - Consultas de empréstimos ativos
-- Persistência em PostgreSQL
 
-**Autor:** Luis Fillipe Backer Faria  
-**GitHub:** lfillipebf-ai
+## Endpoints principais
+- GET/POST /api/autores
+- GET/POST /api/livros
+- GET/POST /api/leitores
+- GET/POST /api/emprestimos
+- PATCH /api/emprestimos/{id}/devolver
+- GET /api/emprestimos/ativos
+
+Autor: Luis Fillipe Backer Faria
+GitHub: lfillipebf-ai
